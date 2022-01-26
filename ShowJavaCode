@@ -1,0 +1,27 @@
+import warnings,sys,os,string
+import re
+from PyPDF2 import PdfFileReader
+from PyPDF2 import PdfFileWriter
+#create the file or empty it
+with open("CodeJava.txt", 'w+') as f:
+    f.truncate(0)
+f.close
+YouCanRead = False
+#Browse folders and files
+print("\n\n\nSTART RESEARCH\n\n\n")
+with open(str(sys.argv[1])) as text:
+	datafile = text.readlines()
+	for line in datafile:
+		li = '"'+line[:-1].replace("\\","/")+'"'
+		print("-------------------------------------------------------------------------------------------\n"+li)
+		os.system('python pdf-parser_modifie.py --search javascript '+li+'  > CodeJava.txt')
+		with open("codeJava.txt") as content:
+			code = content.readlines()
+			for l in code:
+				if '<<' in l:
+					YouCanRead = True
+				if YouCanRead:
+					print(l[:-1])
+				if '>>' in l:
+					YouCanRead = False
+print("\n\n\nFINISH\n\n\n")
