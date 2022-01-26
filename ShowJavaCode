@@ -11,10 +11,14 @@ YouCanRead = False
 print("\n\n\nSTART RESEARCH\n\n\n")
 with open(str(sys.argv[1])) as text:
 	datafile = text.readlines()
+	#read all lines assumed to be paths
 	for line in datafile:
+		#remove last char and replace \ by / 
 		li = '"'+line[:-1].replace("\\","/")+'"'
 		print("-------------------------------------------------------------------------------------------\n"+li)
+		 #use the tool and save the results in the file
 		os.system('python pdf-parser_modifie.py --search javascript '+li+'  > CodeJava.txt')
+		#open the file and write the lines that interest us
 		with open("codeJava.txt") as content:
 			code = content.readlines()
 			for l in code:
