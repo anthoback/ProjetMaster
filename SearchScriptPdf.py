@@ -1,30 +1,27 @@
 import warnings,sys,os,string
 import re
-from PyPDF2 import PdfFileReader
-from PyPDF2 import PdfFileWriter
 import time
 
-#Initialization var
-nombrePDF = 0
-nombreFichier = 0
 
-#Initialization File
-#create the file or empty it
-with open("FileSuspect.txt", 'w+') as f:
-    f.truncate(0)
-f.close
-with open("FileContent.txt", 'w+') as f:
-    f.truncate(0)
-f.close
-with open("FileProtect.txt", 'w+') as f:
-    f.truncate(0)
-f.close
+def initFile() :
+    #Initialization File
+    #create the file or empty it
+    with open("FileSuspect.txt", 'w+') as f:
+        f.truncate(0)
+    f.close
+    with open("FileContent.txt", 'w+') as f:
+        f.truncate(0)
+    f.close
+    with open("FileProtect.txt", 'w+') as f:
+        f.truncate(0)
+    f.close
 
 
-#Browse folders and files
-print("\n\n\nSTART RESEARCH\n\n\n")
-start = time.time()
-try:
+
+def main() :
+    #Initialization var
+    nombrePDF = 0
+    nombreFichier = 0
     for root, dir, files in os.walk(str(sys.argv[1])):
         for file in files:
             nombreFichier = nombreFichier + 1  
@@ -85,11 +82,21 @@ try:
                     fichier = open("FileSuspect.txt", "a")
                     fichier.write(fn + "\n")
                     fichier.close()
-except Exception:
-    print('\nError : No argument \npython3 SearchScriptPdf "folder or Path"') 
+    return (nombreFichier,nombrePDF)
+    
 
-end = time.time()
-print("\n\n\nFINISH\n\n\n")
-print("Temps :" + str(int(end-start)) + " secondes")
-print("Nombre de fichier : " + str(nombreFichier))
-print("Nombre de fichier PDF: " + str(nombrePDF))
+if __name__ == '__main__':
+
+   
+    print("\n\n\nSTART RESEARCH\n\n\n")
+    start = time.time()
+    
+    initFile()
+    File,FilePDF = main()
+    
+    end = time.time()
+    print("\n\n\nFINISH\n\n\n")
+    
+    print("Temps :" + str(int(end-start)) + " secondes")
+    print("Nombre de fichier : " + str(File))
+    print("Nombre de fichier PDF: " + str(FilePDF))
