@@ -6,22 +6,28 @@ import time
 def initFile() :
     #Initialization File
     #create the file or empty it
-    with open("FileSuspect.txt", 'w+') as f:
+    with open("FileContent.txt", 'w+') as f:
         f.truncate(0)
     f.close
-    with open("FileContent.txt", 'w+') as f:
+    with open("FileSuspect.txt", 'w+') as f:
         f.truncate(0)
     f.close
     with open("FileProtect.txt", 'w+') as f:
         f.truncate(0)
     f.close
-
+    with open("FileWithJava.txt", 'w+') as f:
+        f.truncate(0)
+    f.close
+    with open("FileWithOpenAction.txt", 'w+') as f:
+        f.truncate(0)
+    f.close
 
 
 def main() :
     #Initialization var
     nombrePDF = 0
     nombreFichier = 0
+    #Folder or disk path
     for root, dir, files in os.walk(str(sys.argv[1])):
         for file in files:
             nombreFichier = nombreFichier + 1  
@@ -82,6 +88,17 @@ def main() :
                     fichier = open("FileSuspect.txt", "a")
                     fichier.write(fn + "\n")
                     fichier.close()
+
+                elif (Java) :
+                    fichier = open("FileWithJava.txt", "a")
+                    fichier.write(fn + "\n")
+                    fichier.close()
+
+                elif (Action) :
+                    fichier = open("FileWithOpenAction.txt", "a")
+                    fichier.write(fn + "\n")
+                    fichier.close()
+    
     return (nombreFichier,nombrePDF)
     
 
