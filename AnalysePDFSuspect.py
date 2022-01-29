@@ -33,23 +33,21 @@ def main() :
 						print(l[:-1])
 					if '>' in l:
 						YouCanRead = YouCanRead - 1
-			try:
-				os.system('python pdf-parser_modifie.py --search javascript '+li+'  > CodeSuspect.txt')
-				#open the file and write the lines that interest us
-				with open("CodeSuspect.txt") as content:
-					YouCanRead = 0
-					code = content.readlines()
-					print("\nPart JavaScript")
-					for l in code:
-						if '<' in l:
-							YouCanRead = YouCanRead + 1
-						if YouCanRead > 0:
-							print(l[:-1])
-						if '>' in l:
-							YouCanRead = YouCanRead - 1
-			except ValueError:
-				print("Oops!  That was no valid number.  Try again...")
-
+			
+			os.system('python pdf-parser_modifie.py --search javascript '+li+'  > CodeSuspect.txt')
+			#open the file and write the lines that interest us
+			with open("CodeSuspect.txt") as content:
+				YouCanRead = 0
+				code = content.readlines()
+				print("\nPart JavaScript")
+				for l in code:
+					if '<' in l:
+						YouCanRead = YouCanRead + 1
+					if YouCanRead > 0:
+						print(l[:-1])
+					if '>' in l:
+						YouCanRead = YouCanRead - 1
+			
 
 if __name__ == '__main__':
 
