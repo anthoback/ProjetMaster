@@ -47,6 +47,7 @@ def main() :
 						print(l[:-1])
 					if '>' in l:
 						YouCanRead = YouCanRead - 1
+	return FilePDF
 			
 
 if __name__ == '__main__':
