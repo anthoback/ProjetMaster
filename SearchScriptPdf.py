@@ -1,4 +1,4 @@
-import warnings,sys,os,string
+import sys,os,string
 import re
 import time
 
