@@ -25,16 +25,16 @@ def initFile() :
 
 def main() :
     #Initialization var
-    nombrePDF = 0
-    nombreFichier = 0
+    numberPDF = 0
+    numberFile = 0
     #Folder or disk path
     for root, dir, files in os.walk(str(sys.argv[1])):
         for file in files:
-            nombreFichier = nombreFichier + 1  
+            numberFile = numberFile + 1  
             #search .pdf
             if ".pdf" in file:
                 
-                nombrePDF = nombrePDF + 1 
+                numberPDF = numberPDF + 1 
                 Java = False
                 Action = False
                 
@@ -99,13 +99,13 @@ def main() :
                     fichier.write(fn + "\n")
                     fichier.close()
     
-    return (nombreFichier,nombrePDF)
+    return (numberFile,numberPDF)
     
 
 if __name__ == '__main__':
 
    
-    print("\n\n\nSTART RESEARCH\n\n\n")
+    print("\nSTART RESEARCH\n")
     #start the timer
     start = time.time()
     
@@ -114,7 +114,7 @@ if __name__ == '__main__':
     
     #end the timer
     end = time.time()
-    print("\n\n\nFINISH\n\n\n")
+    print("\nFINISH\n")
     
     #print some performance information
     print("Temps :" + str(int(end-start)) + " secondes")
