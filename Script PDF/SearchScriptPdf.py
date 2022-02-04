@@ -2,28 +2,32 @@ import sys,os,string
 import re
 import time
 
+#path of this file
+chemin = os.path.dirname(__file__)
 
 def initFile() :
+
     #Initialization File
     #create the file or empty it
-    with open("FichierTXT/FileContent.txt", 'w+') as f:
+    with open(chemin+"/FichierTXT/FileContent.txt", 'w+') as f:
         f.truncate(0)
     f.close
-    with open("FichierTXT/FileSuspect.txt", 'w+') as f:
+    with open(chemin+"/FichierTXT/FileSuspect.txt", 'w+') as f:
         f.truncate(0)
     f.close
-    with open("FichierTXT/FileProtect.txt", 'w+') as f:
+    with open(chemin+"/FichierTXT/FileProtect.txt", 'w+') as f:
         f.truncate(0)
     f.close
-    with open("FichierTXT/FileWithJava.txt", 'w+') as f:
+    with open(chemin+"/FichierTXT/FileWithJava.txt", 'w+') as f:
         f.truncate(0)
     f.close
-    with open("FichierTXT/FileWithOpenAction.txt", 'w+') as f:
+    with open(chemin+"/FichierTXT/FileWithOpenAction.txt", 'w+') as f:
         f.truncate(0)
     f.close
 
 
 def main() :
+
     #Initialization var
     numberPDF = 0
     numberFile = 0
@@ -43,11 +47,10 @@ def main() :
                 print("-------------------------------------------------------------------------------------------\n"+fn)
                 f= '"'+fn+'"'                
                 #use the tool and save the results in FileContent
-                os.system('python pdfid_modifie.py ' +f + ' > FichierTXT/FileContent.txt')
+                os.system('python "'+chemin+'/pdfid.py" '  +f + ' > "'+chemin+'/FichierTXT/FileContent.txt"')
                 
-
                 #open the file and save all the lines
-                with open('FichierTXT/FileContent.txt') as text:
+                with open(chemin+'/FichierTXT/FileContent.txt') as text:
                     datafile = text.readlines()
                 
 
@@ -59,7 +62,7 @@ def main() :
                         for s in NumberOfScript:
                             #if more than 0 so we save the path in FileProtect
                             if int(s) > 0 :
-                                fichier = open("FichierTXT/FileProtect.txt", "a")
+                                fichier = open(chemin+"/FichierTXT/FileProtect.txt", "a")
                                 fichier.write(fn + "\n")
                                 fichier.close()
                                 print("\nFile crypted\n")
@@ -85,17 +88,17 @@ def main() :
 
                 #if we hava action and java, this file is particularly suspect              
                 if (Java and Action) :
-                    fichier = open("FichierTXT/FileSuspect.txt", "a")
+                    fichier = open(chemin+"/FichierTXT/FileSuspect.txt", "a")
                     fichier.write(fn + "\n")
                     fichier.close()
 
                 elif (Java) :
-                    fichier = open("FichierTXT/FileWithJava.txt", "a")
+                    fichier = open(chemin+"/FichierTXT/FileWithJava.txt", "a")
                     fichier.write(fn + "\n")
                     fichier.close()
 
                 elif (Action) :
-                    fichier = open("FichierTXT/FileWithOpenAction.txt", "a")
+                    fichier = open(chemin+"/FichierTXT/FileWithOpenAction.txt", "a")
                     fichier.write(fn + "\n")
                     fichier.close()
     
