@@ -38,7 +38,7 @@ def main() :
 			afficheFile()
 			
 			 #use the tool and save the results in CodeSuspect
-			os.system('python pdf-parser.py --search javascript '+li+'  > FichierTXT/CodeSuspect.txt')
+			os.system('python "'+chemin+'/pdf-parser.py" --search javascript '+li+'  > "'+chemin+'/FichierTXT/CodeSuspect.txt"')
 			
 			print("\nPart JavaScript\n")
 			afficheFile()
