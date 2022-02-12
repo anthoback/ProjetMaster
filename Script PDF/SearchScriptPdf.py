@@ -6,7 +6,6 @@ import time
 chemin = os.path.dirname(__file__)
 
 def initFile() :
-
     #Initialization File
     #create the file or empty it
     with open(chemin+"/FichierTXT/FileContent.txt", 'w+') as f:
@@ -25,9 +24,7 @@ def initFile() :
         f.truncate(0)
     f.close
 
-
 def main() :
-
     #Initialization var
     numberPDF = 0
     numberFile = 0
@@ -36,8 +33,7 @@ def main() :
         for file in files:
             numberFile = numberFile + 1  
             #search .pdf
-            if ".pdf" in file:
-                
+            if ".pdf" in file:      
                 numberPDF = numberPDF + 1 
                 Java = False
                 Action = False
