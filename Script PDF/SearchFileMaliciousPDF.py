@@ -6,7 +6,7 @@ def affiche(path) :
 	with open(path) as text:
 		datafile = text.readlines()
 		#read all lines assumed to be paths
-		for line in datafile:
+		for line in datafile :
 			#remove last char and replace \ by / 
 			li = '"'+line[:-1].replace("\\","/")+'"'
 			print(li)
@@ -15,15 +15,15 @@ if __name__ == '__main__':
 
 	exit = 1
 	while exit :
-		print("\nChercher des fichiers malicieux PDF \n 1 : Chercher des fichiers malicieux \n 2 : Analyser les fichier Suspect (Javascript + OpenAction) \n 3 : Analyser les fichier avec uniquement du Javascript \n 4 : Analyser les fichier avec uniquement des action à l'ouverture \n 5 : Recherche complete pour les PDF \n 6 : Afficher les fichiers malicieux trouvé\n 7 : exit")
+		print("\nChercher des fichiers malicieux PDF \n 1 : Chercher des fichiers malicieux \n 2 : Analyser les fichiers Suspects (Javascript + OpenAction) \n 3 : Analyser les fichiers avec uniquement du Javascript \n 4 : Analyser les fichiers avec uniquement des action à l'ouverture \n 5 : Recherche complete pour les PDF \n 6 : Afficher les fichiers malicieux trouvés\n 7 : exit")
 
-		choix = int(input("\nQuel est ton choix ? "))
+		choix = int(input("\nQuel est le choix ? "))
 
 		print ("\n\n///////////////////////////////////////////////////////////////////////////////////////////////////\n\n")
 
 		if choix == 1 :
 				
-			Dossier = str(input("Quel est le chemin du dossier complet ? "))
+			Dossier = str(input("Quel est le chemin du dossier complet à parcourir ? "))
 			os.system('python "Script PDF/SearchScriptPdf.py" ' + Dossier)	
 
 		elif choix == 2 :
@@ -40,7 +40,7 @@ if __name__ == '__main__':
 					
 		elif choix == 5 :
 
-			Dossier = str(input("Quel est le chemin du dossier complet ? "))
+			Dossier = str(input("Quel est le chemin du dossier complet à parcourir ? "))
 			os.system('python "Script PDF/SearchScriptPdf.py" ' + Dossier)
 			print ("\n\n///////////////////////////////////////////////////////////////////////////////////////////////////\n\n")
 			os.system('python "Script PDF/AnalysePDFSuspect.py"')
@@ -53,9 +53,9 @@ if __name__ == '__main__':
 			
 			exit2 = 1
 			while exit2 :
-				print("\nAfficher les fichiers malicieux trouvé \n 1 : Afficher les fichier Suspect (Javascript + OpenAction) \n 2 : Afficher les fichier avec uniquement du Javascript \n 3 : Afficher les fichier avec uniquement des action à l'ouverture \n 4 : exit")
+				print("\nAfficher les fichiers malicieux trouvés \n 1 : Afficher les fichier Suspect (Javascript + OpenAction) \n 2 : Afficher les fichiers avec uniquement du Javascript \n 3 : Afficher les fichiers avec uniquement des actions à l'ouverture \n 4 : exit")
 				
-				choix2 = int(input("\nQuel est ton choix ? "))
+				choix2 = int(input("\nQuels sont les fichiers à afficher ? "))
 
 				print ("\n\n///////////////////////////////////////////////////////////////////////////////////////////////////\n\n")
 				
