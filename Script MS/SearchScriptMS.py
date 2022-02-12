@@ -41,8 +41,6 @@ def main() :
                 ListeMacroE =  []
                 ListeObject =  []
                 
-                
-
                 #save the path
                 fn = root+"\\"+file
                 f= '"'+fn+'"'
@@ -59,10 +57,12 @@ def main() :
                     if (r' m ' in line) or (r' M ' in line):
                         ListeMacro.append(line.split()[0][:-1])
 
+                #search the line with m or M which indicates if there are Error vba corrompted
                 for line in datafile:
                     if (r' E ' in line) :
                         ListeMacroE.append(line.split()[0][:-1])
 
+                #search the line with O which indicates if there are embedded file
                 for line in datafile:
                     if (r' O ' in line) :
                         ListeObject.append(line.split()[0][:-1])
