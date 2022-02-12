@@ -18,13 +18,13 @@ if __name__ == '__main__':
 	while exit :
 		print("\nChercher des fichiers malicieux OLE \n 1 : Chercher des fichiers malicieux \n 2 : Analyser les fichiers Suspects \n 3 : Recherche complete pour les OLE \n 4 : Afficher les fichiers Suspects\n 5 : exit")
 
-		choix = int(input("\nQuel est ton choix ? "))
+		choix = int(input("\nQuel est le choix ? "))
 
 		print ("\n\n///////////////////////////////////////////////////////////////////////////////////////////////////\n\n")
 
 		if choix == 1 :
 
-			Dossier = str(input("\nQuel est le chemin du dossier complet ? "))
+			Dossier = str(input("\nQuel est le chemin du dossier complet à parcourir ? "))
 			os.system('python "Script MS/SearchScriptMS.py" ' + Dossier)
 
 		elif choix == 2 :
@@ -33,7 +33,7 @@ if __name__ == '__main__':
 
 		elif choix == 3 :
 
-			Dossier = str(input("\nQuel est le chemin du dossier complet ? "))
+			Dossier = str(input("\nQuel est le chemin du dossier complet à parcourir ? "))
 			os.system('python "Script MS/SearchScriptMS.py" ' + Dossier)
 			print ("\n\n///////////////////////////////////////////////////////////////////////////////////////////////////\n\n")
 			os.system('python "Script MS/AnalyseMSSuspect.py"')
@@ -46,6 +46,6 @@ if __name__ == '__main__':
 			exit = 0
 
 		else :
-			print("Errueur dans le choix")
+			print("Erreur dans le choix")
 
 		print ("\n\n///////////////////////////////////////////////////////////////////////////////////////////////////\n\n")
