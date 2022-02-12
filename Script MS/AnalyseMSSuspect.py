@@ -35,7 +35,6 @@ def main() :
 				print("-------------------------------------------------------------------------------------------\n"+ 'Fichier concerné :' + f + '\nFlux concerné :' + l[m] + "\n\n")
 				os.system('python3 "'+chemin+'/oledump.py" -s '+l[m] +' -v ' + f + ' > "'+chemin+'/FichierTXT/CodeSuspect.txt"' )
 				afficheFile()	
-
 	return FileMS
 
 
@@ -60,3 +59,6 @@ if __name__ == '__main__':
     
     else : 
         print("\nFileSuspect Vide")
+    
+   
+   
