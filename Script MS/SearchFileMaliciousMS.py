@@ -38,7 +38,7 @@ if __name__ == '__main__':
 			print ("\n\n///////////////////////////////////////////////////////////////////////////////////////////////////\n\n")
 			os.system('python "Script MS/AnalyseMSSuspect.py"')
 
-		if choix == 4 :
+		elif choix == 4 :
 
 			affiche(chemin+"/FichierTXT/FileSuspect.txt")
 
