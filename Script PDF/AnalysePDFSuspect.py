@@ -32,13 +32,13 @@ def main() :
 			li = '"'+line[:-1].replace("\\","/")+'"'
 			print("-------------------------------------------------------------------------------------------\n"+li)
 			 #use the tool and save the results in CodeSuspect
-			os.system('python "'+chemin+'/pdf-parser.py" --search openaction '+li+'  > "'+chemin+'/FichierTXT/CodeSuspect.txt"')
+			os.system('python3 "'+chemin+'/pdf-parser.py" --search openaction '+li+'  > "'+chemin+'/FichierTXT/CodeSuspect.txt"')
 			
 			print("\nPart OpenAction\n")
 			afficheFile()
 			
 			 #use the tool and save the results in CodeSuspect
-			os.system('python "'+chemin+'/pdf-parser.py" --search javascript '+li+'  > "'+chemin+'/FichierTXT/CodeSuspect.txt"')
+			os.system('python3 "'+chemin+'/pdf-parser.py" --search javascript '+li+'  > "'+chemin+'/FichierTXT/CodeSuspect.txt"')
 			
 			print("\nPart JavaScript\n")
 			afficheFile()
