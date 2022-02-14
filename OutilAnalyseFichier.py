@@ -10,11 +10,11 @@ if __name__ == '__main__':
 
 		choix = int(input("\nQuel est le choix ? "))
 		if choix == 1 :
-			os.system('python "Script PDF/SearchFileMaliciousPDF.py" ')
+			os.system('python3 "Script PDF/SearchFileMaliciousPDF.py" ')
 			
 
 		elif choix == 2 :
-			os.system('python "Script MS/SearchFileMaliciousMS.py" ')
+			os.system('python3 "Script MS/SearchFileMaliciousMS.py" ')
 
 
 		elif choix == 3 :
