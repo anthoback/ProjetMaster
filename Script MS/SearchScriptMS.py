@@ -1,6 +1,7 @@
 import sys,os,string
 import re
 import time
+import platform
 
 #path of this file
 chemin = os.path.dirname(__file__)
@@ -25,6 +26,7 @@ def main() :
 	#Initialization var
     numberFile = 0
     numberMS = 0
+    Systeme = platform.system()
     #listWord = ['.doc','.dot','.wbk','.docx','.docm','.dotx','.dotm','.docb']
     #listExcel = ['.xls','.xlt','.xlm','.xll_','.xla_','.xla5_','.xla8_','.xlsx','.xlsm','.xltx','.xltm','.xlsb','.xla','.xla','.xll','.xlw']
     #listPowerPoint = ['.ppt','.pot','.pps','.ppa','.ppam','.pptx','.pptm','.potx','.potm','.ppam','.ppsx','.ppsm','.sldx','.sldm','.pa']
@@ -42,7 +44,10 @@ def main() :
                 ListeObject =  []
                 
                 #save the path
-                fn = root+"\\"+file
+                if  "Windows" in Systeme :
+                    fn = root+"\\"+file
+                else :
+                    fn = root+"/"+file
                 f= '"'+fn+'"'
                 print("-------------------------------------------------------------------------------------------\n"+fn)
                 #use the tool and save the results in FileContent
