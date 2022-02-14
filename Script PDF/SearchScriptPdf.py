@@ -1,6 +1,7 @@
 import sys,os,string
 import re
 import time
+import platform
 
 #path of this file
 chemin = os.path.dirname(__file__)
@@ -28,6 +29,7 @@ def main() :
     #Initialization var
     numberPDF = 0
     numberFile = 0
+    Systeme = platform.system()
     #Folder or disk path
     for root, dir, files in os.walk(str(sys.argv[1])):
         for file in files:
@@ -39,11 +41,14 @@ def main() :
                 Action = False
                 
                 #save the path
-                fn = root+"\\"+file
+                if  "Windows" in Systeme :
+                    fn = root+"\\"+file
+                else :
+                    fn = root+"/"+file
                 print("-------------------------------------------------------------------------------------------\n"+fn)
                 f= '"'+fn+'"'                
                 #use the tool and save the results in FileContent
-                os.system('python "'+chemin+'/pdfid.py" '  +f + ' > "'+chemin+'/FichierTXT/FileContent.txt"')
+                os.system('python3 "'+chemin+'/pdfid.py" '  +f + ' > "'+chemin+'/FichierTXT/FileContent.txt"')
                 
                 #open the file and save all the lines
                 with open(chemin+'/FichierTXT/FileContent.txt') as text:
