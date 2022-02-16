@@ -108,7 +108,7 @@ def main() :
 if __name__ == '__main__':
 
    
-    print("\nSTART RESEARCH\n")
+    print("\nDEBUT RECHERHCES\n")
     #start the timer
     start = time.time()
     
@@ -117,7 +117,7 @@ if __name__ == '__main__':
     
     #end the timer 
     end = time.time()
-    print("\nFINISH\n")
+    print("\nFIN\n")
     
     #print some performance information
     print("Temps :" + str(int(end-start)) + " secondes")
