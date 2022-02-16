@@ -24,30 +24,30 @@ if __name__ == '__main__':
 		if choix == 1 :
 				
 			Dossier = str(input("Quel est le chemin du dossier complet à parcourir ? "))
-			os.system('python "Script PDF/SearchScriptPdf.py" ' + Dossier)	
+			os.system('python3 "Script PDF/SearchScriptPdf.py" ' + Dossier)	
 
 		elif choix == 2 :
 
-			os.system('python "Script PDF/AnalysePDFSuspect.py"')
+			os.system('python3 "Script PDF/AnalysePDFSuspect.py"')
 
 		elif choix == 3 :
 
-			os.system('python "Script PDF/AnalysePDFJava.py"')
+			os.system('python3 "Script PDF/AnalysePDFJava.py"')
 
 		elif choix == 4 :
 
-			os.system('python "Script PDF/AnalysePDFOpenAct.py"')	
+			os.system('python3 "Script PDF/AnalysePDFOpenAct.py"')	
 					
 		elif choix == 5 :
 
 			Dossier = str(input("Quel est le chemin du dossier complet à parcourir ? "))
-			os.system('python "Script PDF/SearchScriptPdf.py" ' + Dossier)
+			os.system('python3 "Script PDF/SearchScriptPdf.py" ' + Dossier)
 			print ("\n\n///////////////////////////////////////////////////////////////////////////////////////////////////\n\n")
-			os.system('python "Script PDF/AnalysePDFSuspect.py"')
+			os.system('python3 "Script PDF/AnalysePDFSuspect.py"')
 			print ("\n\n///////////////////////////////////////////////////////////////////////////////////////////////////\n\n")
-			os.system('python "Script PDF/AnalysePDFJava.py"')
+			os.system('python3 "Script PDF/AnalysePDFJava.py"')
 			print ("\n\n///////////////////////////////////////////////////////////////////////////////////////////////////\n\n")
-			os.system('python "Script PDF/AnalysePDFOpenAct.py"')	
+			os.system('python3"Script PDF/AnalysePDFOpenAct.py"')	
 		
 		elif choix == 6 :
 			
@@ -75,7 +75,7 @@ if __name__ == '__main__':
 					exit2 = 0
 
 				else : 
-					print("Errueur dans le choix")
+					print("Erreur dans le choix")
 				print ("\n\n///////////////////////////////////////////////////////////////////////////////////////////////////\n\n")
 				
 
@@ -83,6 +83,6 @@ if __name__ == '__main__':
 			exit = 0
 
 		else : 
-			print("Errueur dans le choix")
+			print("Erreur dans le choix")
 
 		print ("\n\n///////////////////////////////////////////////////////////////////////////////////////////////////\n\n")
