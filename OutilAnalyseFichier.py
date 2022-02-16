@@ -21,5 +21,5 @@ if __name__ == '__main__':
 			exit = 0
 
 		else :
-			print("Errueur dans le choix")
+			print("Erreur dans le choix")
 
