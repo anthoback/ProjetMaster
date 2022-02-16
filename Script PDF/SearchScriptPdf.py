@@ -66,7 +66,7 @@ def main() :
                                 fichier = open(chemin+"/FichierTXT/FileProtect.txt", "a")
                                 fichier.write(fn + "\n")
                                 fichier.close()
-                                print("\nFile crypted\n")
+                                print("\nFichier chiffré\n")
                     
 
                     if '/OpenAction' in line:
@@ -76,7 +76,7 @@ def main() :
                             #if more than 0 so we set action at true
                             if int(s) > 0 :
                                 Action = True
-                                print("\n/OpenAction Found\n")
+                                print("\n/OpenAction trouvé\n")
 
                     if '/JavaScript' in line:
                         #find the number of script Java
@@ -85,7 +85,7 @@ def main() :
                             #if more than 0 so we set java at true
                             if int(s) > 0 :
                                 Java = True
-                                print("\n/JavaScript Found\n")
+                                print("\n/JavaScript trouvé\n")
 
                 #if we hava action and java, this file is particularly suspect              
                 if (Java and Action) :
@@ -109,7 +109,7 @@ def main() :
 if __name__ == '__main__':
 
    
-    print("\nSTART RESEARCH\n")
+    print("\nDEBUT RECHERHCES\n")
     #start the timer
     start = time.time()
     
@@ -118,7 +118,7 @@ if __name__ == '__main__':
     
     #end the timer
     end = time.time()
-    print("\nFINISH\n")
+    print("\nFIN\n")
     
     #print some performance information
     print("Temps :" + str(int(end-start)) + " secondes")
