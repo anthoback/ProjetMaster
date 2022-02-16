@@ -21,6 +21,7 @@ def afficheFile() :
 			if YouCanRead :
 				print(l[:-1])
 
+
 def main() :
 	FilePDF = 0
 	with open(chemin+"/FichierTXT/FileWithOpenAction.txt") as text:
@@ -34,7 +35,7 @@ def main() :
 			#use the tool and save the results in CodeSuspect
 			os.system('python3 "'+chemin+'/pdf-parser.py" --search openaction '+li+'  > "'+chemin+'/FichierTXT/CodeSuspect.txt"')
 
-			print("\nPart OpenAction\n")
+			print("\nPartie OpenAction\n")
 			afficheFile()
 	return FilePDF
 
@@ -43,7 +44,7 @@ if __name__ == '__main__':
 	intiFileCode()
 
 	if os.path.getsize(chemin+"/FichierTXT/FileWithOpenAction.txt") != 0 :
-		print("\nSTART RESEARCH\n")
+		print("\nDEBUT RECHERHCES\n")
 		#start the timer
 		start = time.time()
 
@@ -51,7 +52,7 @@ if __name__ == '__main__':
 
 		#end the timer
 		end = time.time()
-		print("\nFINISH\n")
+		print("\nFIN\n")
 
 		#print some performance information
 		print("Temps :" + str(int(end-start)) + " secondes")
