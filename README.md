@@ -1,5 +1,8 @@
 # ProjetMaster
 
+
+Nécessite python3 
+
 Néccessite les outils python 
 - pdfid.py
 - pdf-parser.py
@@ -18,4 +21,5 @@ pdfid.py et pdf-parser.py sont à incorporer dans le dossier "Script PDF"
 oledump.py est à incorporer dans le dossier "Script MS"
 
 L'utilisation oledump.py nécessite olefile : https://pypi.org/project/olefile/ 
+
 
