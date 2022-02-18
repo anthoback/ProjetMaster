@@ -24,7 +24,7 @@ if __name__ == '__main__':
 		if choix == 1 :
 				
 			Dossier = str(input("Quel est le chemin du dossier complet à parcourir ? "))
-			os.system('python3 "Script PDF/SearchScriptPdf.py" ' + Dossier)	
+			os.system('python3 "Script PDF/SearchScriptPdf.py" "' + Dossier+'"')	
 
 		elif choix == 2 :
 
@@ -41,7 +41,7 @@ if __name__ == '__main__':
 		elif choix == 5 :
 
 			Dossier = str(input("Quel est le chemin du dossier complet à parcourir ? "))
-			os.system('python3 "Script PDF/SearchScriptPdf.py" ' + Dossier)
+			os.system('python3 "Script PDF/SearchScriptPdf.py" "' + Dossier+'"')
 			print ("\n\n///////////////////////////////////////////////////////////////////////////////////////////////////\n\n")
 			os.system('python3 "Script PDF/AnalysePDFSuspect.py"')
 			print ("\n\n///////////////////////////////////////////////////////////////////////////////////////////////////\n\n")
