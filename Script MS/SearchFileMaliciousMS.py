@@ -25,7 +25,7 @@ if __name__ == '__main__':
 		if choix == 1 :
 
 			Dossier = str(input("\nQuel est le chemin du dossier complet à parcourir ? "))
-			os.system('python3 "Script MS/SearchScriptMS.py" ' + Dossier)
+			os.system('python3 "Script MS/SearchScriptMS.py" "' + Dossier+'"')
 
 		elif choix == 2 :
 
@@ -34,7 +34,7 @@ if __name__ == '__main__':
 		elif choix == 3 :
 
 			Dossier = str(input("\nQuel est le chemin du dossier complet à parcourir ? "))
-			os.system('python3 "Script MS/SearchScriptMS.py" ' + Dossier)
+			os.system('python3 "Script MS/SearchScriptMS.py" "' + Dossier+ '"')
 			print ("\n\n///////////////////////////////////////////////////////////////////////////////////////////////////\n\n")
 			os.system('python3 "Script MS/AnalyseMSSuspect.py"')
 
